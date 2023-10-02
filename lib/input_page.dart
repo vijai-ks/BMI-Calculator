@@ -5,6 +5,7 @@ import 'customized_cards.dart';
 
 const bottomContainerHeight = 80.0;
 const primaryCardColor = Color(0xFF1D1E33);
+const secondaryCardColor = Color(0xFF111328);
 const bottomContainerColor = Color(0xFFEB1555);
 
 class InputPage extends StatefulWidget {
@@ -15,6 +16,31 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Color maleCardColor = secondaryCardColor;
+  Color femaleCardColor = secondaryCardColor;
+
+  // 1 = MALE and  2 = FEMALE
+  void updateSelectedCardColor(int genderSelection) {
+    //Selected gender is male
+    if (genderSelection == 1) {
+      if (maleCardColor == secondaryCardColor) {
+        maleCardColor = primaryCardColor;
+        femaleCardColor = secondaryCardColor;
+      } else {
+        maleCardColor = secondaryCardColor;
+      }
+    }
+    //Selected gender is female
+    else if (genderSelection == 2) {
+      if (femaleCardColor == secondaryCardColor) {
+        femaleCardColor = primaryCardColor;
+        maleCardColor = secondaryCardColor;
+      } else {
+        femaleCardColor = secondaryCardColor;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,10 +58,12 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        print('Male tapped');
+                        setState(() {
+                          updateSelectedCardColor(1);
+                        });
                       },
                       child: ReusableCard(
-                        colour: primaryCardColor,
+                        colour: maleCardColor,
                         childCard: GenderCards(
                           genderIcon: FontAwesomeIcons.mars,
                           gender: 'MALE',
@@ -46,10 +74,12 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        print('Female tapped');
+                        setState(() {
+                          updateSelectedCardColor(2);
+                        });
                       },
                       child: ReusableCard(
-                        colour: primaryCardColor,
+                        colour: femaleCardColor,
                         childCard: GenderCards(
                           genderIcon: FontAwesomeIcons.venus,
                           gender: 'FEMALE',
