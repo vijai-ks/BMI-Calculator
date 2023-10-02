@@ -39,7 +39,10 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       colour: primaryCardColor,
-                      childCard: Column(),
+                      childCard: GenderCards(
+                        genderIcon: FontAwesomeIcons.venus,
+                        gender: 'FEMALE',
+                      ),
                     ),
                   ),
                 ],
