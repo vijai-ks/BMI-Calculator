@@ -16,62 +16,32 @@ class _InputPageState extends State<InputPage> {
           child: Text('BMI Calculator'),
         ),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: Column(
           children: [
             Expanded(
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF1D1E33),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      margin: const EdgeInsets.all(15.0),
-                    ),
+                    child: ReusableCard(),
                   ),
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF1D1E33),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      margin: const EdgeInsets.all(15.0),
-                    ),
+                    child: ReusableCard(),
                   ),
                 ],
               ),
             ),
             Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1D1E33),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                margin: const EdgeInsets.all(15.0),
-              ),
+              child: ReusableCard(),
             ),
             Expanded(
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF1D1E33),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      margin: const EdgeInsets.all(15.0),
-                    ),
+                    child: ReusableCard(),
                   ),
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF1D1E33),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      margin: const EdgeInsets.all(15.0),
-                    ),
+                    child: ReusableCard(),
                   ),
                 ],
               ),
@@ -79,6 +49,23 @@ class _InputPageState extends State<InputPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class ReusableCard extends StatelessWidget {
+  const ReusableCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFF1D1E33),
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      margin: const EdgeInsets.all(15.0),
     );
   }
 }
