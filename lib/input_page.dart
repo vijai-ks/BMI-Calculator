@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'customized_cards.dart';
 import 'constants.dart';
+import 'customized_roundbuttons.dart';
 
 enum GenderType { male, female, initial }
 
@@ -92,7 +93,7 @@ class _InputPageState extends State<InputPage> {
                           style: kNumberTextStyle,
                         ),
                         const Text(
-                          'cm',
+                          'cms',
                           style: kLabelStyle,
                         ),
                       ],
@@ -148,11 +149,25 @@ class _InputPageState extends State<InputPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              RoundIconButton(icon: FontAwesomeIcons.minus),
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                onPress: () {
+                                  setState(() {
+                                    weight = weight - 1;
+                                  });
+                                },
+                              ),
                               const SizedBox(
                                 width: 10.0,
                               ),
-                              RoundIconButton(icon: FontAwesomeIcons.plus),
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                                onPress: () {
+                                  setState(() {
+                                    weight = weight + 1;
+                                  });
+                                },
+                              ),
                             ],
                           ),
                         ],
@@ -179,27 +194,6 @@ class _InputPageState extends State<InputPage> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  IconData icon;
-
-  RoundIconButton({required this.icon});
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      onPressed: () {},
-      elevation: 0.0,
-      constraints: const BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      shape: const CircleBorder(),
-      fillColor: const Color(0xFF4C4F5E),
-      child: Icon(icon),
     );
   }
 }
