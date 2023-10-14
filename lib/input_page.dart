@@ -9,6 +9,7 @@ enum GenderType { male, female, initial }
 
 int height = 180;
 int weight = 60;
+int age = 20;
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -192,7 +193,55 @@ class _InputPageState extends State<InputPage> {
                         setState(() {});
                       },
                       colour: kPrimaryCardColor,
-                      childCard: Column(),
+                      childCard: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Age',
+                            style: kLabelStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                age.toString(),
+                                style: kNumberTextStyle,
+                              ),
+                              const SizedBox(
+                                width: 10.0,
+                              ),
+                              const Text(
+                                'yrs',
+                                style: kLabelStyle,
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                onPress: () {
+                                  setState(() {
+                                    age = age - 1;
+                                  });
+                                },
+                              ),
+                              const SizedBox(
+                                width: 10.0,
+                              ),
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                                onPress: () {
+                                  setState(() {
+                                    age = age + 1;
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
