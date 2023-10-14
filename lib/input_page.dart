@@ -6,6 +6,8 @@ import 'constants.dart';
 
 enum GenderType { male, female, initial }
 
+int height = 180;
+
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
 
@@ -72,10 +74,10 @@ class _InputPageState extends State<InputPage> {
                   setState(() {});
                 },
                 colour: kPrimaryCardColor,
-                childCard: const Column(
+                childCard: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'HEIGHT',
                       style: kLabelStyle,
                     ),
@@ -85,14 +87,26 @@ class _InputPageState extends State<InputPage> {
                       textBaseline: TextBaseline.alphabetic,
                       children: [
                         Text(
-                          '192',
+                          height.toString(),
                           style: kNumberTextStyle,
                         ),
-                        Text(
+                        const Text(
                           'cm',
                           style: kLabelStyle,
                         ),
                       ],
+                    ),
+                    Slider(
+                      value: height.toDouble(),
+                      min: 120.0,
+                      max: 220.0,
+                      activeColor: const Color(0xFFEB1555),
+                      inactiveColor: const Color(0xFF8d8e98),
+                      onChanged: (double newValue) {
+                        setState(() {
+                          height = newValue.round();
+                        });
+                      },
                     ),
                   ],
                 ),
