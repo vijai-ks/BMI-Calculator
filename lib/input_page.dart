@@ -142,9 +142,21 @@ class _InputPageState extends State<InputPage> {
                             'WEIGHT',
                             style: kLabelStyle,
                           ),
-                          Text(
-                            weight.toString(),
-                            style: kNumberTextStyle,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                weight.toString(),
+                                style: kNumberTextStyle,
+                              ),
+                              const SizedBox(
+                                width: 10.0,
+                              ),
+                              const Text(
+                                'kgs',
+                                style: kLabelStyle,
+                              ),
+                            ],
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
