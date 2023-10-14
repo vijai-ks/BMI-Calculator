@@ -7,6 +7,7 @@ import 'constants.dart';
 enum GenderType { male, female, initial }
 
 int height = 180;
+int weight = 60;
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -133,7 +134,29 @@ class _InputPageState extends State<InputPage> {
                         setState(() {});
                       },
                       colour: kPrimaryCardColor,
-                      childCard: Column(),
+                      childCard: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'WEIGHT',
+                            style: kLabelStyle,
+                          ),
+                          Text(
+                            weight.toString(),
+                            style: kNumberTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              RoundIconButton(icon: FontAwesomeIcons.minus),
+                              const SizedBox(
+                                width: 10.0,
+                              ),
+                              RoundIconButton(icon: FontAwesomeIcons.plus),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
@@ -156,6 +179,27 @@ class _InputPageState extends State<InputPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  IconData icon;
+
+  RoundIconButton({required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      onPressed: () {},
+      elevation: 0.0,
+      constraints: const BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
+      shape: const CircleBorder(),
+      fillColor: const Color(0xFF4C4F5E),
+      child: Icon(icon),
     );
   }
 }
