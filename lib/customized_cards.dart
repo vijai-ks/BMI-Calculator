@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
-const labelStyle = TextStyle(
-  fontSize: 20.0,
-  color: Color(0xFF8D8E98),
-);
+import 'constants.dart';
 
 class GenderCards extends StatelessWidget {
   String gender;
@@ -25,7 +21,7 @@ class GenderCards extends StatelessWidget {
         ),
         Text(
           gender,
-          style: labelStyle,
+          style: kLabelStyle,
         )
       ],
     );

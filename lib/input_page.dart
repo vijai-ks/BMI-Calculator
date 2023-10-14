@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'customized_cards.dart';
-
-const bottomContainerHeight = 80.0;
-const primaryCardColor = Color(0xFF1D1E33);
-const secondaryCardColor = Color(0xFF111328);
-const bottomContainerColor = Color(0xFFEB1555);
+import 'constants.dart';
 
 enum GenderType { male, female, initial }
 
@@ -42,8 +38,8 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       colour: selectedGender == GenderType.male
-                          ? primaryCardColor
-                          : secondaryCardColor,
+                          ? kPrimaryCardColor
+                          : kSecondaryCardColor,
                       childCard: GenderCards(
                         genderIcon: FontAwesomeIcons.mars,
                         gender: 'MALE',
@@ -58,8 +54,8 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       colour: selectedGender == GenderType.female
-                          ? primaryCardColor
-                          : secondaryCardColor,
+                          ? kPrimaryCardColor
+                          : kSecondaryCardColor,
                       childCard: GenderCards(
                         genderIcon: FontAwesomeIcons.venus,
                         gender: 'FEMALE',
@@ -74,7 +70,7 @@ class _InputPageState extends State<InputPage> {
                 onPress: () {
                   setState(() {});
                 },
-                colour: primaryCardColor,
+                colour: kPrimaryCardColor,
                 childCard: Column(),
               ),
             ),
@@ -86,7 +82,7 @@ class _InputPageState extends State<InputPage> {
                       onPress: () {
                         setState(() {});
                       },
-                      colour: primaryCardColor,
+                      colour: kPrimaryCardColor,
                       childCard: Column(),
                     ),
                   ),
@@ -95,7 +91,7 @@ class _InputPageState extends State<InputPage> {
                       onPress: () {
                         setState(() {});
                       },
-                      colour: primaryCardColor,
+                      colour: kPrimaryCardColor,
                       childCard: Column(),
                     ),
                   ),
@@ -103,9 +99,9 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             Container(
-              color: bottomContainerColor,
+              color: kBottomContainerColor,
               width: double.infinity,
-              height: bottomContainerHeight,
+              height: kBottomContainerHeight,
             ),
           ],
         ),
