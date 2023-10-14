@@ -5,7 +5,12 @@ const kLabelStyle = TextStyle(
   color: Color(0xFF8D8E98),
 );
 
-const kBottomContainerHeight = 80.0;
+const kNumberTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
+);
+
+const kBottomContainerHeight = 60.0;
 const kPrimaryCardColor = Color(0xFF1D1E33);
 const kSecondaryCardColor = Color(0xFF111328);
 const kBottomContainerColor = Color(0xFFEB1555);

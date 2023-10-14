@@ -26,6 +26,7 @@ class _InputPageState extends State<InputPage> {
       ),
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               child: Row(
@@ -71,7 +72,28 @@ class _InputPageState extends State<InputPage> {
                   setState(() {});
                 },
                 colour: kPrimaryCardColor,
-                childCard: Column(),
+                childCard: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'HEIGHT',
+                      style: kLabelStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '192',
+                          style: kNumberTextStyle,
+                        ),
+                        Text(
+                          'cm',
+                          style: kLabelStyle,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             Expanded(
