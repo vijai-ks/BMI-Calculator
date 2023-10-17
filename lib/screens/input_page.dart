@@ -250,7 +250,13 @@ class _InputPageState extends State<InputPage> {
             ),
             BottomButton(
               onTap: () {
-                Navigator.pushNamed(context, '/result');
+                Navigator.pushNamed(
+                  context,
+                  '/result',
+                  arguments: {
+                    'name': 'vijai',
+                  },
+                );
               },
               buttonText: 'CALCULATE',
             ),

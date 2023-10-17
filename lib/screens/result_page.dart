@@ -6,6 +6,9 @@ import '../components/bottom_buton.dart';
 class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final routeArgs =
+        ModalRoute.of(context)?.settings?.arguments as Map<String, String>;
+    final name = routeArgs['name'].toString();
     return Scaffold(
         appBar: AppBar(
           title: const Center(
@@ -30,12 +33,12 @@ class ResultPage extends StatelessWidget {
                 flex: 5,
                 child: ReusableCard(
                   colour: kPrimaryCardColor,
-                  childCard: const Column(
+                  childCard: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        'OVERWEIGHT',
+                        name,
                         style: kBMIResultTextStyle,
                       ),
                       Text(
