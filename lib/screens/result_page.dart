@@ -8,7 +8,10 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final routeArgs =
         ModalRoute.of(context)?.settings?.arguments as Map<String, String>;
-    final name = routeArgs['name'].toString();
+    final BMI = routeArgs['BMI'].toString();
+    final result = routeArgs['result'].toString();
+    final interpretaion = routeArgs['interpretaion'].toString();
+
     return Scaffold(
         appBar: AppBar(
           title: const Center(
@@ -38,15 +41,15 @@ class ResultPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        name,
+                        result.toUpperCase(),
                         style: kBMIResultTextStyle,
                       ),
                       Text(
-                        '22.3',
+                        BMI,
                         style: kBMITextStyle,
                       ),
                       Text(
-                        'Your BMI is Quite low. You should eat more to stay healthy',
+                        interpretaion,
                         textAlign: TextAlign.center,
                         style: kBMITextResultStyle,
                       ),
