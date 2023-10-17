@@ -10,6 +10,11 @@ const kNumberTextStyle = TextStyle(
   fontWeight: FontWeight.w900,
 );
 
+const kBottomTextStyle = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.w700,
+);
+
 const kBottomContainerHeight = 60.0;
 const kPrimaryCardColor = Color(0xFF1D1E33);
 const kSecondaryCardColor = Color(0xFF111328);
