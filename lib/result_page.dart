@@ -53,7 +53,7 @@ class ResultPage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/');
+                  Navigator.pop(context);
                 },
                 child: Container(
                   color: kBottomContainerColor,
