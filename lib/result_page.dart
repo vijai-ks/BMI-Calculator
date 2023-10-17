@@ -52,7 +52,12 @@ class ResultPage extends StatelessWidget {
                   onPress: () {},
                 ),
               ),
-              const BottomButton(),
+              BottomButton(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                buttonText: 'RE-CALCULATE',
+              ),
             ],
           ),
         ));

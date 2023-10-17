@@ -4,6 +4,7 @@ import 'reusable_card.dart';
 import 'customized_cards.dart';
 import 'constants.dart';
 import 'customized_roundbuttons.dart';
+import 'bottom_buton.dart';
 
 enum GenderType { male, female, initial }
 
@@ -247,21 +248,11 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            GestureDetector(
+            BottomButton(
               onTap: () {
                 Navigator.pushNamed(context, '/result');
               },
-              child: Container(
-                color: kBottomContainerColor,
-                width: double.infinity,
-                height: kBottomContainerHeight,
-                child: const Center(
-                  child: Text(
-                    'CALCULATE',
-                    style: kBottomTextStyle,
-                  ),
-                ),
-              ),
+              buttonText: 'CALCULATE',
             ),
           ],
         ),

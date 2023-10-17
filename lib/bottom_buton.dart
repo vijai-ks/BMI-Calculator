@@ -2,23 +2,22 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class BottomButton extends StatelessWidget {
-  const BottomButton({
-    super.key,
-  });
+  String buttonText;
+  VoidCallback onTap;
+
+  BottomButton({required this.onTap, required this.buttonText});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pop(context);
-      },
+      onTap: onTap,
       child: Container(
         color: kBottomContainerColor,
         width: double.infinity,
         height: kBottomContainerHeight,
-        child: const Center(
+        child: Center(
           child: Text(
-            'RE-CALCULATE',
+            buttonText,
             style: kBottomTextStyle,
           ),
         ),
