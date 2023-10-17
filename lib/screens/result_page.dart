@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/components/bottom_buton.dart';
 
+// This is the result page for the BMI Calculator Application.
 class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // To get the values passed from the named routes. It is in a map format.
     final routeArgs =
         ModalRoute.of(context)?.settings?.arguments as Map<String, String>;
+
+    // Extracting values from the parameters passed from the named routes.
     final BMI = routeArgs['BMI'].toString();
     final result = routeArgs['result'].toString();
     final interpretaion = routeArgs['interpretaion'].toString();
@@ -60,6 +64,7 @@ class ResultPage extends StatelessWidget {
               ),
               BottomButton(
                 onTap: () {
+                  // To return back to the previous screen, we are poping the current screen.
                   Navigator.pop(context);
                 },
                 buttonText: 'RE-CALCULATE',

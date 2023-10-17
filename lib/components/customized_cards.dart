@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/constants.dart';
 
+// This is a Customized Card Widget that can be re-used every time
 class GenderCards extends StatelessWidget {
   String gender;
   IconData genderIcon;

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// This file is mainly for creating constants and reusing them.
+// These are label and number formatting styles.
+
 const kLabelStyle = TextStyle(
   fontSize: 20.0,
   color: Color(0xFF8D8E98),
@@ -34,6 +37,8 @@ const kBMITextStyle = TextStyle(
 const kBMITextResultStyle = TextStyle(
   fontSize: 22.0,
 );
+
+// These are color code constants
 
 const kBottomContainerHeight = 60.0;
 const kPrimaryCardColor = Color(0xFF1D1E33);

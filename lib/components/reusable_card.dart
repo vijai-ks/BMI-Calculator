@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// This widget is built mainly for creating cards.
+// This is a single card widget for Customized_Cards widget.
 class ReusableCard extends StatelessWidget {
   Color colour;
   Widget childCard;

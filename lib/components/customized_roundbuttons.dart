@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// This is an important customized widget in place of Floating Action Button.
+// All Properties are took from Floating Action Button and built using RoundIconButton.
 class RoundIconButton extends StatelessWidget {
   IconData icon;
   VoidCallback onPress;

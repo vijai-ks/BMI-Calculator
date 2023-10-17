@@ -7,8 +7,10 @@ import 'package:bmi_calculator/components/customized_roundbuttons.dart';
 import 'package:bmi_calculator/components/bottom_buton.dart';
 import 'package:bmi_calculator/calculator_brain.dart';
 
+// Enum for gnder type selection.
 enum GenderType { male, female, initial }
 
+// Initial values for Height and weight and age.
 int height = 180;
 int weight = 60;
 int age = 20;
@@ -20,6 +22,7 @@ class InputPage extends StatefulWidget {
   State<InputPage> createState() => _InputPageState();
 }
 
+// This is the initial page for the BMI Calculator Application
 class _InputPageState extends State<InputPage> {
   GenderType selectedGender = GenderType.initial;
 
@@ -101,6 +104,7 @@ class _InputPageState extends State<InputPage> {
                         ),
                       ],
                     ),
+                    // This is a slider widget to get the height from user.
                     SliderTheme(
                       data: SliderTheme.of(context).copyWith(
                         activeTrackColor: Colors.white,
@@ -254,6 +258,7 @@ class _InputPageState extends State<InputPage> {
                 CalculatorBrain calc =
                     CalculatorBrain(height: height, weight: weight);
 
+                // Passing arguments via Named Routes.
                 Navigator.pushNamed(
                   context,
                   '/result',
